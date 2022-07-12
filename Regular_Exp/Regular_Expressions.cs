@@ -13,6 +13,7 @@ namespace Regular_Exp
         const string Last_name = "^[A-Z]{1}[a-z]{2,}$";
         const string E_mail = "^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$";
         const string Mobile_no =  "^[0-9]{1,3}[ ][789][0-9]{9}$";
+        const string Pass_rule1 = "^[a-z]{8}$";
 
         //uc1 firstname checker
         public void FirstNameCheck(string firstName)
@@ -62,6 +63,20 @@ namespace Regular_Exp
             {
                 Console.WriteLine("Enter a valid mobile number");
             }    
+        }
+
+        //uc5 password rule 1
+        public void Password_Rule1(string pass1)
+        {
+            if(Regex.IsMatch(pass1, Pass_rule1))
+            {
+                Console.WriteLine("Password is strong.");
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Please enter lower case 8 characters ");
+            }
         }
     }
 }

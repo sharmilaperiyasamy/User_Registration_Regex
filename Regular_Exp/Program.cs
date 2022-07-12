@@ -1,6 +1,7 @@
 ﻿Regular_Exp.Regular_Expressions reg = new Regular_Exp.Regular_Expressions();
 
-Console.WriteLine("Regular Expressions : \n0.exit\n1.Firstname Checker\n2.Lastname Checker\n3.EMail Check\n4.Mobile Number Check\nEnter your option");
+Console.WriteLine("Regular Expressions : \n0.exit\n1.Firstname Checker\n2.Lastname Checker\n3.EMail Check\n4.Mobile Number Check" +
+    "\n5.Password_Rule1 check\nEnter your option");
 int n = Convert.ToInt32(Console.ReadLine());
 switch(n)
 {
@@ -23,6 +24,11 @@ switch(n)
         Console.WriteLine("Enter the Mobile number : ");
         string mob = Console.ReadLine();
         reg.mobileno_check(mob);
+        break;
+    case 5:
+        Console.WriteLine("Enter the password : ");
+        string pas = Console.ReadLine();
+        reg.Password_Rule1(pas);
         break;
     default:
         Console.WriteLine("Invalid option");
