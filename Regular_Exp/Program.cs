@@ -1,7 +1,7 @@
 ﻿Regular_Exp.Regular_Expressions reg = new Regular_Exp.Regular_Expressions();
 
 Console.WriteLine("Regular Expressions : \n0.exit\n1.Firstname Checker\n2.Lastname Checker\n3.EMail Check\n4.Mobile Number Check" +
-    "\n5.Password_Rule1 check\n6.Password_Rule2 check\n7.Password_Rule3 check\n8.Password_Rule4 check\nEnter your option");
+    "\n5.Password_Rule1 check\n6.Password_Rule2 check\n7.Password_Rule3 check\n8.Password_Rule4 check\n9.Sample Email validation\nEnter your option");
 int n = Convert.ToInt32(Console.ReadLine());
 switch(n)
 {
@@ -45,8 +45,16 @@ switch(n)
         string pas4 = Console.ReadLine();
         reg.Password_Rule4(pas4);
         break;
+    case 9:
+        Console.WriteLine("\nSample Email validation:\n");
+        string[] sample = File.ReadAllLines(@"C:\Users\Lenovo\source\repos\Bridgelabz\User_Registration_Regex\Regular_Exp\Sample_email.txt");
+        for (int i = 0; i < sample.Length; i++)
+        {
+            string ret = reg.Sample_email_clear(sample[i]);
+            Console.WriteLine(sample[i] + "  ->  " + ret);
+        }
+        break;
     default:
         Console.WriteLine("Invalid option");
         break;
-
 }

@@ -12,12 +12,13 @@ namespace Regular_Exp
         const string First_name = "^[A-Z]{1}[a-z]{2,}$";
         const string Last_name = "^[A-Z]{1}[a-z]{2,}$";
         const string E_mail = "^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$";
-        const string Mobile_no =  "^[0-9]{1,3}[ ][789][0-9]{9}$";
+        const string Mobile_no = "^[0-9]{1,3}[ ][789][0-9]{9}$";
         const string Pass_rule1 = "^[a-z]{8}$";
         const string Pass_rule2 = "^[A-Z]{1}[a-z A-Z]{7,}$";
         const string Pass_rule3 = "^[A-Z]{1}[a-z]{6}[0-9]{1}";
-        //const string Pass_rule4 = "^[A-Z]{1}[a-z]{5}[0-9]{1}(?=.*[*.!@#$%^&(){}[]:<>,.?/~`_+-=|\\])$";
         const string Pass_rule4 = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
+        const string Clear_Sample = "^[0-9A-Za-z]+([._+-][0-9A-Za-z]+)*[@][0-9A-Za-z]+.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
+
         //uc1 firstname checker
         public void FirstNameCheck(string firstName)
         {
@@ -118,6 +119,19 @@ namespace Regular_Exp
             else
             {
                 Console.WriteLine("Please enter valid password ");
+            }
+        }
+
+        // uc9 email Sample validation
+        public string Sample_email_clear(String mail)
+        {
+            if(Regex.IsMatch(mail, Clear_Sample))
+            {
+                return "Valid Email Address.";
+            }
+            else
+            {
+                return "Email Address is not valid";
             }
         }
     }
