@@ -1,6 +1,6 @@
 ﻿Regular_Exp.Regular_Expressions reg = new Regular_Exp.Regular_Expressions();
 
-Console.WriteLine("Regular Expressions : \n0.exit\n1.Firstname Checker\n2.Lastname Checker\nEnter your option");
+Console.WriteLine("Regular Expressions : \n0.exit\n1.Firstname Checker\n2.Lastname Checker\n3.EMail Check\nEnter your option");
 int n = Convert.ToInt32(Console.ReadLine());
 switch(n)
 {
@@ -13,6 +13,11 @@ switch(n)
         Console.WriteLine("Enter the Last Name : ");
         string lname = Console.ReadLine();
         reg.LastNameCheck(lname);
+        break;
+    case 3:
+        Console.WriteLine("Enter the Email Address : ");
+        string email = Console.ReadLine();
+        reg.emailcheck(email);
         break;
     default:
         Console.WriteLine("Invalid option");
