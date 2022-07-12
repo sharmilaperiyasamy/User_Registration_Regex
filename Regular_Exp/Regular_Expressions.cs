@@ -16,7 +16,8 @@ namespace Regular_Exp
         const string Pass_rule1 = "^[a-z]{8}$";
         const string Pass_rule2 = "^[A-Z]{1}[a-z A-Z]{7,}$";
         const string Pass_rule3 = "^[A-Z]{1}[a-z]{6}[0-9]{1}";
-
+        //const string Pass_rule4 = "^[A-Z]{1}[a-z]{5}[0-9]{1}(?=.*[*.!@#$%^&(){}[]:<>,.?/~`_+-=|\\])$";
+        const string Pass_rule4 = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$";
         //uc1 firstname checker
         public void FirstNameCheck(string firstName)
         {
@@ -67,7 +68,7 @@ namespace Regular_Exp
             }    
         }
 
-        //uc5 password rule 1
+        //uc5 password rule 1 - minimum 8 characters
         public void Password_Rule1(string pass1)
         {
             if(Regex.IsMatch(pass1, Pass_rule1))
@@ -80,7 +81,7 @@ namespace Regular_Exp
                 Console.WriteLine("Please enter lower case 8 characters ");
             }
         }
-        //uc6 password rule 2
+        //uc6 password rule 2 one upper case
         public void Password_Rule2(string pass2)
         {
             if (Regex.IsMatch(pass2, Pass_rule2))
@@ -93,10 +94,23 @@ namespace Regular_Exp
                 Console.WriteLine("Please enter valid password ");
             }
         }
-        //uc7 password rule 3
+        //uc7 password rule 3 - one numeric character
         public void Password_Rule3(string pass3)
         {
             if (Regex.IsMatch(pass3, Pass_rule3))
+            {
+                Console.WriteLine("Password is strong.");
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Please enter valid password ");
+            }
+        }
+        //uc8 password rule 4 - one special character
+        public void Password_Rule4(string pass4)
+        {
+            if (Regex.IsMatch(pass4, Pass_rule4))
             {
                 Console.WriteLine("Password is strong.");
                 return;
