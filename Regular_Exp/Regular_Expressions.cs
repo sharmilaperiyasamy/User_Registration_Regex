@@ -12,6 +12,7 @@ namespace Regular_Exp
         const string First_name = "^[A-Z]{1}[a-z]{2,}$";
         const string Last_name = "^[A-Z]{1}[a-z]{2,}$";
         const string E_mail = "^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$";
+        const string Mobile_no =  "^[0-9]{1,3}[ ][789][0-9]{9}$";
 
         //uc1 firstname checker
         public void FirstNameCheck(string firstName)
@@ -49,5 +50,18 @@ namespace Regular_Exp
             }
         }
 
+        //uc4 mobile number check
+        public void mobileno_check(string MobileNumber)
+        {
+            if(Regex.IsMatch(MobileNumber,Mobile_no))
+            {
+                Console.WriteLine("Mobile Number is valid");
+                return ;
+            }
+            else
+            {
+                Console.WriteLine("Enter a valid mobile number");
+            }    
+        }
     }
 }
