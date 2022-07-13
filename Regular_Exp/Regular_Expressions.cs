@@ -11,7 +11,7 @@ namespace Regular_Exp
     {
         const string First_name = "^[A-Z]{1}[a-z]{2,}$";
         const string Last_name = "^[A-Z]{1}[a-z]{2,}$";
-        const string E_mail = "^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$";
+        const string E_mail = "abc.?[a-z]{3,}@bl.co.?[a-z]{2,}$";
         const string Mobile_no = "^[0-9]{1,3}[ ][789][0-9]{9}$";
         const string Pass_rule1 = "^[a-z]{8}$";
         const string Pass_rule2 = "^[A-Z]{1}[a-z A-Z]{7,}$";
@@ -133,6 +133,45 @@ namespace Regular_Exp
             {
                 return "Email Address is not valid";
             }
+        }
+
+        //uc13 use lambda function to validate user entry
+        public void validate()
+        {
+            //First name validation
+            Console.WriteLine("Enter the First name : ");
+            string firstName = Console.ReadLine();
+            foreach (Match match in Regex.Matches(firstName, First_name))
+                Console.WriteLine("First Name is valid.");
+            Console.WriteLine();
+
+            // Last name validation
+            Console.WriteLine("Enter the Last name : ");
+            string lastname = Console.ReadLine();
+            foreach (Match match in Regex.Matches(lastname, Last_name))
+                Console.WriteLine("Last Name is valid.");
+            Console.WriteLine();
+
+            // email validation
+            Console.WriteLine("Enter the Email : ");
+            string email = Console.ReadLine();
+            foreach (Match match in Regex.Matches(email, E_mail)) ;
+            Console.WriteLine("Email is valid");
+            Console.WriteLine();
+
+            //Mobile number validation
+            Console.WriteLine("Enter the Mobile Number : ");
+            string mobile = Console.ReadLine();
+            foreach (Match match in Regex.Matches(mobile, Mobile_no))
+                Console.WriteLine("Mobile Number is valid");
+            Console.WriteLine();
+
+            //Password Validation
+            Console.WriteLine("Enter the Password : ");
+            string password = Console.ReadLine();
+            foreach (Match match in Regex.Matches(password, Pass_rule4))
+                Console.WriteLine("Password is valid");
+            Console.WriteLine();
         }
     }
 }
