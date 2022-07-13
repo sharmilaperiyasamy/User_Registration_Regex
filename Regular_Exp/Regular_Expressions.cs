@@ -11,7 +11,7 @@ namespace Regular_Exp
     {
         const string First_name = "^[A-Z]{1}[a-z]{2,}$";
         const string Last_name = "^[A-Z]{1}[a-z]{2,}$";
-        const string E_mail = "^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$";
+        const string E_mail = "abc.?[a-z]{3,}@bl.co.?[a-z]{2,}$";
 
         //uc1 firstname checker
         public void FirstNameCheck(string firstName)
